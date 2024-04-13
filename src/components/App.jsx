@@ -9,8 +9,8 @@ function App() {
   return (
     <div>
       <Navbar />
-      {/* <MovieRec />
-      <Question />
+      <MovieRec />
+      {/*<Question />
       <MovieContainer /> */}
     </div>
   );

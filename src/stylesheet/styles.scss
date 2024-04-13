@@ -5,9 +5,11 @@
   background-color: black;
   padding: 10px;
   color: #fff;
+  margin-top: 20px;
 }
 
 .logoContainer {
+  margin-left: 20px;
   flex: 0 0 auto;
 }
 
@@ -42,4 +44,56 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.recContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 100vh;
+  background-color: black;
+  color: #fff;
+}
+
+.left {
+  flex: 0 0 60%;
+  padding-right: 20px;
+  margin-left: 20px;
+}
+
+.recTitle {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.recButtons {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.recButton {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.right {
+  flex: 0 0 40%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  width: 400px;
+  height: 300px;
 }
