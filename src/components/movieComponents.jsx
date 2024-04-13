@@ -19,7 +19,6 @@ function MovieComponent() {
         <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
       </ListGroup>
       <movieCard.Body>
-        {/* need to iterate over this links? */}
         {/* can check if property is availble, show only availble */}
         <movieCard.Link href="#">streaming service link</movieCard.Link>
         <movieCard.Link href="#">other streaming service link</movieCard.Link>
