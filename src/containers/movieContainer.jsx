@@ -236,10 +236,10 @@ const props = {
   };
 
 const MovieContainer = (props) => {
-{title, year, overview, genre, director, actors, }
+{title, year, overview, genre, director, actors}
 return (
     <MovieComponent 
-      title={}
+      title={title}
 
     />
 )
