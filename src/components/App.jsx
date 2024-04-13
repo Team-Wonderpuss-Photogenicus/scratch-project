@@ -8,9 +8,9 @@ import styles from "../stylesheet/styles.scss";
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
-      {/* <MovieRec /> */}
-      {/* <Question /> */}
+      <Navbar />
+      <MovieRec />
+      <Question />
       <MovieContainer />
     </div>
   );
