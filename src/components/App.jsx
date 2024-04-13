@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar.jsx";
-import MovieContainer from "./MovieContainer.jsx";
+import Navbar from "./navbar.jsx";
+import MovieContainer from "../containers/movieContainer.jsx";
 import Question from "./Question.jsx";
-import MovieRec from "./MovieRec.jsx";
+import MovieRec from "./movieRec.jsx";
 
 function App() {
   return (
@@ -14,3 +14,5 @@ function App() {
     </div>
   );
 }
+
+export default App;
