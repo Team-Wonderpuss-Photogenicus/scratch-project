@@ -1,8 +1,9 @@
 const express = require('express');
+const MoviesController = require('../controllers/moviesController');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Hello from movies api!' });
+router.get('/', MoviesController.getByFilters, (req, res) => {
+  return res.json(res.locals.results);
 });
 
 module.exports = router;
