@@ -10,8 +10,8 @@ function App() {
     <div>
       <Navbar />
       <MovieRec />
-      {/*<Question />
-      <MovieContainer /> */}
+      <Question />
+      {/* <MovieContainer /> */}
     </div>
   );
 }
