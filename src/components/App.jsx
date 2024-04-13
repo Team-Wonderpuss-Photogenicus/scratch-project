@@ -8,10 +8,10 @@ import styles from "../stylesheet/styles.scss";
 function App() {
   return (
     <div>
-      <Navbar />
-      <MovieRec />
-      {/*<Question />
-      <MovieContainer /> */}
+      {/* <Navbar /> */}
+      {/* <MovieRec /> */}
+      {/* <Question /> */}
+      <MovieContainer />
     </div>
   );
 }
