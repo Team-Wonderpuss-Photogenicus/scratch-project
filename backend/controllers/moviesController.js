@@ -17,10 +17,6 @@ const options = {
 };
 
 const MoviesController = {
-  mongoQuery: (req, res, next) => {
-    
-  },
-
   getByFilters: async (req, res, next) => {
     // const genres = '10749,35';
     // const nextCursor = '113478:조선명탐정: 흡혈괴마의 비밀';
