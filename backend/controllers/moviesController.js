@@ -1,13 +1,3 @@
-
-
-// const services = 'netflix, prime.subscription';
-// const country = 'us';
-// const genres = '878';
-// const genres_relation = 'or';
-
-// const url = `https://streaming-availability.p.rapidapi.com/search/filters?services=netflix,prime.subscription&country=us&genres=10749,35&genres_relation=or`;
-
-
 const options = {
   method: 'GET',
   headers: {
@@ -16,18 +6,21 @@ const options = {
   }
 };
 
-const MoviesController = {
+const moviesController = {
   getByFilters: async (req, res, next) => {
-    // const genres = '10749,35';
-    // const nextCursor = '113478:조선명탐정: 흡혈괴마의 비밀';
-    
     const { genres, nextCursor } = req.params;
+
     const services = 'netflix,prime.subscription,prime.rent,prime.buy,apple.rent,apple.buy,hbo,hulu.addon.hbo,prime.addon.hbomaxus,hulu.subscription,hulu.addon.hbo,apple.addon,peacock.free';
-    // const cursor = `&cursor=${nextCursor}`;
+    const country = 'us';
+    const output_language = 'en';
+    const order_by = 'original_title';
+    const genres_relation = 'or';
+    const desc = 'true';
+    const show_type = 'movie';
     let cursor;
     if (nextCursor) cursor = `cursor=${nextCursor}`;
 
-    const url = `https://streaming-availability.p.rapidapi.com/search/filters?services=${services}&country=us&output_language=en&order_by=original_title&genres=${genres}&genres_relation=or&desc=true&show_type=movie&${cursor}`;
+    const url = `https://streaming-availability.p.rapidapi.com/search/filters?services=${services}&country=${country}&output_language=${output_language}&order_by=${order_by}&genres=${genres}&genres_relation=${genres_relation}&desc=${desc}&show_type=${show_type}&${cursor}`;
 
     try {
       const response = await fetch(url, options);
@@ -41,4 +34,4 @@ const MoviesController = {
   }
 }
 
-module.exports = MoviesController;
+module.exports = moviesController;
