@@ -18,7 +18,7 @@ const options = {
 
 const MoviesController = {
   getByFilters: async (req, res, next) => {
-    // const { country, genres } = req.params;
+    const { country, genres } = req.params;
     const services = 'netflix,prime.subscription,prime.rent,prime.buy,apple.rent,apple.buy,hbo,hulu.addon.hbo,prime.addon.hbomaxus,hulu.subscription,hulu.addon.hbo,apple.addon,peacock.free';
     // const genres = '10749,35';
     const nextCursor = '113478:조선명탐정: 흡혈괴마의 비밀';
@@ -29,10 +29,10 @@ const MoviesController = {
       const response = await fetch(url, options);
       const result = await response.json();
       // console.log(result);
-      res.locals.results = result;
+      res.locals.result = result;
       return next();
     } catch (error) {
-      console.error(error);
+      return next({ log: 'Error in MoviesController.getByFilters: ', error });
     }
   }
 }
