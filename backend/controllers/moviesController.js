@@ -37,7 +37,7 @@ const MoviesController = {
       const response = await fetch(url, options);
       const result = await response.json();
       // console.log(result);
-      res.locals.result = result;
+      res.locals.movies = result;
       return next();
     } catch (error) {
       return next({ log: 'Error in MoviesController.getByFilters: ', error });

@@ -3,7 +3,7 @@ const MoviesController = require('../controllers/moviesController');
 const router = express.Router();
 
 router.get('/', MoviesController.getByFilters, (req, res) => {
-  return res.json(res.locals.result);
+  return res.json(res.locals.movies);
 });
 
 module.exports = router;
