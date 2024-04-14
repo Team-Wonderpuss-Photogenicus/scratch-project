@@ -28,13 +28,12 @@ emotionsController.getEmotion = (req, res, next) => {
       console.log(analysisResults.result.emotion.document.emotion);
       const emotionObj = analysisResults.result.emotion.document.emotion;
 
-      var emotionsArr = Object.keys(emotionObj);
-      var min = emotionObj[emotionsArr[0]];
-      var max = emotionObj[emotionsArr[0]];
-      var i;
+      const emotionsArr = Object.keys(emotionObj);
+      let min = emotionObj[emotionsArr[0]];
+      let max = emotionObj[emotionsArr[0]];
       let emotion = emotionsArr[0];
 
-      for (i = 1; i < emotionsArr.length; i++) {
+      for (let i = 1; i < emotionsArr.length; i++) {
         var value = emotionObj[emotionsArr[i]];
         if (value < min) min = value;
         if (value > max) {
