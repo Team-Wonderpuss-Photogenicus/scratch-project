@@ -1,10 +1,5 @@
 const postersController = {};
 
-// const fetch = require('node-fetch');
-
-const url =
-  'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc';
-
 const options = {
   method: 'GET',
   headers: {
@@ -14,29 +9,33 @@ const options = {
   },
 };
 
-postersController.getMovieList = (res, req, next) => {
+postersController.getMovieList = (req, res, next) => {
+  const id = req.params.genreId;
+  // res.send(`Received ID: ${id}`);
+  const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=us&with_genres=${id}`;
+
   fetch(url, options)
     .then((res) => res.json())
     .then((json) => {
       console.log(json);
-      //   res.locals.movieList = json;
+      res.locals.movieList = json;
       return next();
     })
     .catch((err) => console.error('error:' + err));
 };
 
-postersController.getMovieDetails = (res, req, next) => {
-  //   const movieId = req.params.movieId;
-  //   console.log('this is movie id->', movieId);
-  const detailsUrl = `https://api.themoviedb.org/3/movie/693134?language=en-US`;
+postersController.getMovieDetails = (req, res, next) => {
+  const id = req.params.id;
+  console.log('new api', id);
+  res.locals.id = id;
+  const detailsUrl = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
   fetch(detailsUrl, options)
     .then((res) => res.json())
     .then((json) => {
       console.log(json);
-      //   res.locals.movieList = json;
+      res.locals.movieDetails = json;
       return next();
     })
     .catch((err) => console.error('error:' + err));
 };
-
 module.exports = postersController;

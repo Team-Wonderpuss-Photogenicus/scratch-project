@@ -2,16 +2,15 @@ const express = require('express');
 const postersController = require('../controllers/postersController.js');
 const router = express.Router();
 
-router.get('/:genreId', postersController.getMovieList, (req, res) => {
-  res.json();
+router.get('/movies/:id', postersController.getMovieDetails, (req, res) => {
+  res.send(res.locals.movieDetails);
 });
+
 router.get(
-  '/movies/:movieId',
-  postersController.getMovieDetails,
+  '/movie-list/:genreId',
+  postersController.getMovieList,
   (req, res) => {
-    // console.log('route ->', req.params.movieId);
-    res.json();
+    res.send(res.locals.movieList);
   }
 );
-
 module.exports = router;
