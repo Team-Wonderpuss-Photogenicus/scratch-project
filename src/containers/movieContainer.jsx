@@ -1,7 +1,7 @@
 import React from "react";
-import MovieComponent from "../components/movieComponents.jsx";
+import MovieComponent from "../components/MovieComponents.jsx";
 
-const props = {
+const movie = {
   type: "movie",
   title: "#LuckyNumber",
   overview:
@@ -235,21 +235,30 @@ const props = {
   directors: ["Brendan Gabriel Murphy"],
 };
 
-const MovieContainer = (props) => {
-  { title, year, overview, genres, streamingInfo, directors, cast }
-  console.log("title: ", title);
+const genresMap = movie.genres.map((genre, index) => {
+<Genre key={index} genre={genre} />
+
+return ( 
+  <div>
+    {genreMap}
+    </div>)
+})
+
+const MovieContainer = () => {
+
+  console.log("title: ", movie.title);
   return (
     <div>
       <MovieComponent
-        title={title}
-        year={year}
-        overview={overview}
-        genres={genres}
-        directors={directors}
-        cast={cast}
-        streamingInfo={streamingInfo}
+        title={movie.title}
+        year={movie.year}
+        overview={movie.overview}
+        genres={genresMap}
+        // directors={movie.directors}
+        // cast={movie.cast}
+        // streamingInfo={movie.streamingInfo}
       />
-    </div>
+      </div>
   );
 };
 
