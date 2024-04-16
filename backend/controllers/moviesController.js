@@ -8,8 +8,8 @@ const options = {
 
 const moviesController = {
   getMovieList: async (req, res, next) => {
-    const { genreId } = req.params;
-
+    const { with_genres } = req.params;
+    
     // const services = 'netflix,prime.subscription,prime.rent,prime.buy,apple.rent,apple.buy,hbo,hulu.addon.hbo,prime.addon.hbomaxus,hulu.subscription,hulu.addon.hbo,apple.addon,peacock.free';
     // const country = 'us';
     // const output_language = 'en';
@@ -19,33 +19,49 @@ const moviesController = {
     // const show_type = 'movie';
     // let cursor;
     // if (nextCursor) cursor = `cursor=${nextCursor}`;
-
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=us&with_genres=${genreId}}`;
-
+    
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=us&with_genres=${with_genres}}`;
+    
     try {
       const response = await fetch(url, options);
       const result = await response.json();
       // console.log(result);
-      res.locals.movieList = result;
+      res.locals.list = result;
       return next();
     } catch (err) {
       return next({ log: 'Error in moviesController.getMovieList: ', err });
     }
   },
 
+  
   getMovieDetails: async (req, res, next) => {
-    const { id } = req.params;
-    res.locals.movieId = id;
-
-    const deetsUrl = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
-
+    const { movie_id } = req.params;
+    
+    const deetsUrl = `https://api.themoviedb.org/3/movie/${movie_id}?language=en-US`;
+    
     try {
       const response = await fetch(deetsUrl, options);
       const result = await response.json();
-      res.locals.movieDetails = result;
+      res.locals.details = result;
+      // console.log(res.locals.details);
       return next();
     } catch (err) {
       return next({ log: 'Error in moviesController.getMovieDetails: ', err });
+    }
+  },
+
+  getWatchProviders: async (req, res, next) => {
+    const { movie_id } = req.params;
+  
+    const providerUrl = `https://api.themoviedb.org/3/movie/${movie_id}/watch/providers`;
+  
+    try {
+      const response = await fetch(providerUrl, options);
+      const result = await response.json();
+      res.locals.providers = result;
+      return next();
+    } catch (err) {
+      return next({ log: 'Error in moviesController.getWatchProviders: ', err });
     }
   }
 }
