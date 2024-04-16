@@ -1,35 +1,51 @@
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': 'f267b612b6msh504ab02ca095331p142270jsn257fad83de1e',
-    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+    accept: 'f267b612b6msh504ab02ca095331p142270jsn257fad83de1e',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZDJkMTBjYmQ5NDRhMjM4ZGEyODY3NmYyNTUwMTAzMSIsInN1YiI6IjY2MWRjOGI4N2FlY2M2MDE2MzZhYzA2YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oZo5hhwTMoFBdXLbXC6U0i_M_cYijQzP5oMXg09qc_Y'
   }
 };
 
 const moviesController = {
-  getByFilters: async (req, res, next) => {
-    const { genres, nextCursor } = req.params;
+  getMovieList: async (req, res, next) => {
+    const { genreId } = req.params;
 
-    const services = 'netflix,prime.subscription,prime.rent,prime.buy,apple.rent,apple.buy,hbo,hulu.addon.hbo,prime.addon.hbomaxus,hulu.subscription,hulu.addon.hbo,apple.addon,peacock.free';
-    const country = 'us';
-    const output_language = 'en';
-    const order_by = 'original_title';
-    const genres_relation = 'or';
-    const desc = 'true';
-    const show_type = 'movie';
-    let cursor;
-    if (nextCursor) cursor = `cursor=${nextCursor}`;
+    // const services = 'netflix,prime.subscription,prime.rent,prime.buy,apple.rent,apple.buy,hbo,hulu.addon.hbo,prime.addon.hbomaxus,hulu.subscription,hulu.addon.hbo,apple.addon,peacock.free';
+    // const country = 'us';
+    // const output_language = 'en';
+    // const order_by = 'original_title';
+    // const genres_relation = 'or';
+    // const desc = 'true';
+    // const show_type = 'movie';
+    // let cursor;
+    // if (nextCursor) cursor = `cursor=${nextCursor}`;
 
-    const url = `https://streaming-availability.p.rapidapi.com/search/filters?services=${services}&country=${country}&output_language=${output_language}&order_by=${order_by}&genres=${genres}&genres_relation=${genres_relation}&desc=${desc}&show_type=${show_type}&${cursor}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=us&with_genres=${genreId}}`;
 
     try {
       const response = await fetch(url, options);
       const result = await response.json();
       // console.log(result);
-      res.locals.movies = result;
+      res.locals.movieList = result;
       return next();
-    } catch (error) {
-      return next({ log: 'Error in MoviesController.getByFilters: ', error });
+    } catch (err) {
+      return next({ log: 'Error in moviesController.getMovieList: ', err });
+    }
+  },
+
+  getMovieDetails: async (req, res, next) => {
+    const { id } = req.params;
+    res.locals.movieId = id;
+
+    const deetsUrl = `https://api.themoviedb.org/3/movie/${id}?language=en-US`;
+
+    try {
+      const response = await fetch(deetsUrl, options);
+      const result = await response.json();
+      res.locals.movieDetails = result;
+      return next();
+    } catch (err) {
+      return next({ log: 'Error in moviesController.getMovieDetails: ', err });
     }
   }
 }
