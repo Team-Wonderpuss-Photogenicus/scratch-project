@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../stylesheet/styles.scss";
-import logoImg from '../assets/giphy.gif';
-import profileImg from '../assets/profile.png';
+import logoImg from "../assets/giphy.gif";
+import profileImg from "../assets/profile.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <div className="navbar">
       <div className="logoContainer">
         <img src={logoImg} alt="logo" className="logo" />
       </div>
@@ -15,7 +15,7 @@ const Navbar = () => {
         <button className="login">Login</button>
         <img src={profileImg} alt="profile" className="profileImg" />
       </div>
-    </nav>
+    </div>
   );
 };
 

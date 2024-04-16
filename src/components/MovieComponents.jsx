@@ -17,27 +17,12 @@ function MovieComponent(props) {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item> {genres}
-            {/* <ul>
-                {genres.map(genre => (
-                    <li key={genre.id}>{genre.name}</li>
-                ))}
-            </ul> */}
+        <ListGroup.Item> Genres: {genres}
         </ListGroup.Item>
-        {/* <ListGroup.Item>Directors:
-            <ul>
-                {directors.map(director => (
-                    <li key={director}>{director}</li>
-                ))}
-            </ul>
+        <ListGroup.Item>Directors: {directors}
         </ListGroup.Item>
-        <ListGroup.Item>Cast:
-            <ul>
-                {cast.map(actor => (
-                    <li key={actor}>{actor}</li>
-                ))}
-            </ul>
-        </ListGroup.Item> */}
+        <ListGroup.Item>Cast: {cast}
+        </ListGroup.Item>
       </ListGroup>
       <Card.Body>
         {/* can check if property is availble, show only availble */}

@@ -235,15 +235,6 @@ const movie = {
   directors: ["Brendan Gabriel Murphy"],
 };
 
-const genresMap = movie.genres.map((genre, index) => {
-<Genre key={index} genre={genre} />
-
-return ( 
-  <div>
-    {genreMap}
-    </div>)
-})
-
 const MovieContainer = () => {
 
   console.log("title: ", movie.title);
@@ -253,10 +244,10 @@ const MovieContainer = () => {
         title={movie.title}
         year={movie.year}
         overview={movie.overview}
-        genres={genresMap}
-        // directors={movie.directors}
-        // cast={movie.cast}
-        // streamingInfo={movie.streamingInfo}
+        genres={movie.genres[0].name}
+        directors={movie.directors}
+        cast={movie.cast}
+        streamingInfo={movie.streamingInfo}
       />
       </div>
   );
