@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "css-selector": "^0.1.0",
     "express": "^4.19.2",
     "ibm-watson": "^7.1.2",
@@ -19,6 +20,8 @@
     "mongoose": "^8.3.1",
     "node-fetch": "^3.3.2",
     "react": "^18.2.0",
+    "react-avatar": "^5.0.3",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-router": "^6.22.3",
     "react-router-dom": "^6.22.3",
