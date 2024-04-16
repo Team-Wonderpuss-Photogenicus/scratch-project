@@ -1,5 +1,5 @@
 const express = require('express');
-const MoviesController = require('../controllers/moviesController');
+const moviesController = require('../controllers/moviesController');
 const router = express.Router();
 
 router.get('/:genreId', moviesController.getByFilters, (req, res) => {
