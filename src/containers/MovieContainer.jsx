@@ -234,64 +234,35 @@ const obj = [
       },
     ],
     directors: ["Brendan Gabriel Murphy"],
-  }
+  },
 ];
 
-//will need to make fetch req that makes array of obj
-//convert each object into elements
+console.log("object movie title: ", obj.title);
 
-const url = "";
-
-console.log("response object movie title: ", obj[0].title);
-
-const MovieContainer = async (object) => {
-  // try {
-  // const res = await fetch(url, () => {})
-  // const movies = await res.json()
-  // } catch (err) {
-
-  // }
-
-    const moviesMap = obj?.map((movie, index) => {
-      //question make makes it conditional
-      console.log("checking map iteration: ", index);
-      console.log("in loop, title: ", movie.title);
-      return (
-        <div>
-        <MovieComponent key={'m' + index}
-          title={movie.title}
-        //   year={movie.year}
-        //   overview={movie.overview}
-        //   genres={movie.genres}
-        //   directors={movie.directors}
-        //   cast={movie.cast}
-        //   streamingInfo={movie.streamingInfo}
-        />
-        </div>
-      );
-    });
-
+const MovieContainer = (object) => {
+  const moviesMap = obj?.map((movie, index) => {
+    //question make makes it conditional
+    console.log("checking map iteration: ", index);
+    console.log("in loop, title: ", movie.title);
     return (
-    <div>
-        {moviesMap ? moviesMap : console.log("no movies")}
-    </div>
+      <MovieComponent
+        key={"m" + index}
+        title={movie.title}
+          year={movie.year}
+          overview={movie.overview}
+          genres={movie.genres[0].name}
+          directors={movie.directors[0]}
+          cast={movie.cast}
+          streamingInfo={movie.streamingInfo}
+      />
     );
-  
+  });
+
+  return <div>{moviesMap ? moviesMap : console.log("no movies")}</div>;
 };
 
 export default MovieContainer;
 
-// {
-  /* <MovieComponent
-title={movie.title}
-year={movie.year}
-overview={movie.overview}
-genres={Genre}
-directors={movie.directors}
-cast={movie.cast}
-streamingInfo={movie.streamingInfo}
-/> */
-// }
 
 // function genreList (movie) {
 //     const genreMap = movies.genres.map((item, index) => {

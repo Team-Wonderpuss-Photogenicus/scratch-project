@@ -17,14 +17,14 @@ function MovieComponent(props) {
           {overview}
         </Card.Text>
       </Card.Body>
-      {/* <ListGroup className="list-group-flush">
+      <ListGroup className="list-group-flush">
         <ListGroup.Item> Genres: {genres}
         </ListGroup.Item>
         <ListGroup.Item>Directors: {directors}
         </ListGroup.Item>
         <ListGroup.Item>Cast: {cast}
         </ListGroup.Item>
-      </ListGroup> */}
+      </ListGroup>
       <Card.Body>
         {/* can check if property is availble, show only availble */}
         {/* <Card.Link href={streamingInfo[0].link}>streaming service link</Card.Link> */}
