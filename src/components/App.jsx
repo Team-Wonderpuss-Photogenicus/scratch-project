@@ -11,7 +11,7 @@ function App() {
       <Navbar />
       <MovieRec />
       <Question />
-      {/*<MovieContainer /> */}
+      <MovieContainer />
     </div>
   );
 }
