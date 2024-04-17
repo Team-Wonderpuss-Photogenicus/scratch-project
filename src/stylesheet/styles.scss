@@ -116,3 +116,22 @@
 .question {
   font-size: 20px;
 }
+
+.cardContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card{
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;;
+}
+
+.list-group-item {
+  // margin-bottom: 1px;
+  border: 1px solid #898c8e;
+  // border-radius: 5px;
+}

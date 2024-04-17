@@ -1,6 +1,11 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 import ListGroup from "react-bootstrap/ListGroup";
+import right from '../assets/right.jpeg';
+
 
 function MovieComponent(props) {
   const {title, year, overview, genres, streamingInfo, directors, cast, poster_path} = props;
@@ -9,8 +14,9 @@ function MovieComponent(props) {
   
 
   return (
-    <Card style={{ width: "18rem" }}>
-      {/* <Card.Img variant="top" src={poster_path} /> */}
+    <Col md={4}>
+    <Card className="card" style={{ width: "20rem" }}>
+      <Card.Img variant="top" src={right} />
       <Card.Body>
         <Card.Title>{ title } ({ year })</Card.Title>
         <Card.Text>
@@ -31,6 +37,7 @@ function MovieComponent(props) {
         <Card.Link href="#">other streaming service link</Card.Link>
       </Card.Body>
     </Card>
+    </Col>
   );
 }
 
