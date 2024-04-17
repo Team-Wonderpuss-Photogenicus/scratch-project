@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MovieComponent from "../components/MovieComponents.jsx";
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -475,13 +475,37 @@ const obj = [
 
 console.log("object movie title: ", obj.title);
 
-const MovieContainer = (object) => {
+const MovieContainer = ({ movies }) => {
+
+/*
+
+const [getdata, setGetData] = useState([]);
+
+const URL = something;
+const params = { emotion: emotion, movieID: movieID};
+
+useEffect(() => {
+  const getData = async () => {
+    const response = await fetch(URL,
+    {
+      method: 'GET',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(params)
+    })
+    const { movies } = await response.json();
+
+  }
+*/
+
+
   const moviesMap = obj?.map((movie, index) => {
     //question make makes it conditional
     console.log("checking map iteration: ", index);
     console.log("in loop, title: ", movie.title);
     return (
-        <div className="movieContainer">
       <MovieComponent
         key={"m" + index}
         title={movie.title}
@@ -492,11 +516,10 @@ const MovieContainer = (object) => {
           cast={movie.cast}
           streamingInfo={movie.streamingInfo}
       />
-      </div>
     );
   });
 
-  return <div>{moviesMap ? moviesMap : console.log("no movies")}</div>;
+  return <div className="movieContainer"> {moviesMap ? moviesMap : null}</div>;
 };
 
 export default MovieContainer;
