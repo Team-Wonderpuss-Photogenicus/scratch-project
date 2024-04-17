@@ -1,7 +1,7 @@
 import React from "react";
 import MovieComponent from "../components/MovieComponents.jsx";
 
-const movie = {
+const response = [{
   type: "movie",
   title: "#LuckyNumber",
   overview:
@@ -233,24 +233,68 @@ const movie = {
     },
   ],
   directors: ["Brendan Gabriel Murphy"],
-};
+}];
 
-const MovieContainer = () => {
+//will need to make fetch req that makes array of obj
+//convert each object into elements
 
-  console.log("title: ", movie.title);
-  return (
-    <div>
+const url = "";
+
+
+
+const MovieContainer = (movie) => {
+
+    // try {
+    // const res = await fetch(url, () => {})
+    // const movies = await res.json()
+    // } catch (err) {
+
+    // }
+
+
+
+  const moviesMap = movie?.map((movie, index) => { //question make makes it conditional
+    return (
       <MovieComponent
         title={movie.title}
         year={movie.year}
         overview={movie.overview}
-        genres={movie.genres[0].name}
+        genres={Genre}
         directors={movie.directors}
         cast={movie.cast}
         streamingInfo={movie.streamingInfo}
       />
-      </div>
+    );
+  });
+
+  console.log("title: ", movie.title);
+  return (
+    <div>
+    {moviesMap ? moviesMap : null}
+    </div>
   );
 };
 
+function genreList (movie) {
+    const genreMap = movies.genres.map((item, index) => {
+        <Genre key={index} text={item} />;
+    });
+    
+    return { Genre };
+};
+
+function Genre (props) {
+    return <div>{props.text}</div>;
+};
+
 export default MovieContainer;
+
+{/* <MovieComponent
+  title={movie.title}
+  year={movie.year}
+  overview={movie.overview}
+  genres={Genre}
+  directors={movie.directors}
+  cast={movie.cast}
+  streamingInfo={movie.streamingInfo}
+/> */}
