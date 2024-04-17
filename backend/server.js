@@ -12,11 +12,11 @@ app.use(express.json());
 const api = require('./routes/api');
 const emotions = require('./routes/emotions');
 const movies = require('./routes/movies');
-const posters = require('./routes/posters');
+// const posters = require('./routes/posters');
 
 app.use('/api/emotions', emotions);
 app.use('/api/movies', movies);
-app.use('/api/posters', posters);
+// app.use('/api/posters', posters);
 app.use('/api', api);
 
 app.use((req, res) => res.sendStatus(404));
