@@ -1,8 +1,11 @@
+.appContainer {
+  background-color: black;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: black;
   padding: 10px;
   color: #fff;
   margin-top: 20px;
@@ -51,13 +54,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  height: 100vh;
-  background-color: black;
+  height: 50vh;
   color: #fff;
 }
 
 .left {
-  flex: 0 0 60%;
+  flex: 0 0 50%;
   padding-right: 20px;
   margin-left: 20px;
 }
@@ -88,12 +90,29 @@
 }
 
 .right {
-  flex: 0 0 40%;
+  flex: 0 0 50%;
 }
 
 .image {
   width: 100%;
   height: auto;
-  width: 400px;
+  width: 500px;
   height: 300px;
+}
+
+.questionContainer {
+  color: white;
+  text-align: center;
+}
+
+.submit {
+  margin-left: 10px;
+}
+
+.text {
+  width: 500px;
+}
+
+.question {
+  font-size: 20px;
 }

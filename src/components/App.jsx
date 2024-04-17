@@ -7,11 +7,11 @@ import styles from "../stylesheet/styles.scss";
 
 function App() {
   return (
-    <div>
+    <div className="appContainer">
       <Navbar />
       <MovieRec />
-      {/* <Question /> */}
-      <MovieContainer />
+      <Question />
+      {/*<MovieContainer /> */}
     </div>
   );
 }
