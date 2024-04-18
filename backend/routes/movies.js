@@ -23,8 +23,8 @@ router.get(
   }
 );
 
-router.get(
-  '/movie-list/:emotion',
+router.post(
+  '/',
   fileController.getMappingEmotions,
   moviesController.getMovieList,
   (req, res) => {

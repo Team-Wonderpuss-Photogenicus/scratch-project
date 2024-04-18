@@ -13,23 +13,19 @@ const options = {
 const moviesController = {
   getMovieList: async (req, res, next) => {
     const emoList = res.locals.emotionList;
-    const { emotion } = req.params;
+    // const { emotion } = req.params;
+
+    const { emotion, matchOrEscape, page } = req.body;
+    console.log(req.body);
     const obj = emoList.find((emo) => emo.emotion === emotion);
 
-    let with_genres = obj.matching;
-    with_genres = with_genres.join(', ');
+    let with_genres = obj[matchOrEscape];
+    with_genres = with_genres.join('|');
 
-    // const services = 'netflix,prime.subscription,prime.rent,prime.buy,apple.rent,apple.buy,hbo,hulu.addon.hbo,prime.addon.hbomaxus,hulu.subscription,hulu.addon.hbo,apple.addon,peacock.free';
-    // const country = 'us';
-    // const output_language = 'en';
-    // const order_by = 'original_title';
-    // const genres_relation = 'or';
-    // const desc = 'true';
-    // const show_type = 'movie';
-    // let cursor;
-    // if (nextCursor) cursor = `cursor=${nextCursor}`;
+    const sort_by = 'popularity.desc';
+    const watch_region = 'us';
 
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&watch_region=us&with_genres=${with_genres}}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=${sort_by}&watch_region=${watch_region}&with_genres=${with_genres}`;
 
     try {
       const response = await fetch(url, options);
