@@ -503,11 +503,11 @@ useEffect(() => {
 
   const moviesMap = obj?.map((movie, index) => {
     //question make makes it conditional
-    console.log("checking map iteration: ", index);
+    console.log("key", movie.title + index);
     console.log("in loop, title: ", movie.title);
     return (
       <MovieComponent
-        key={"m" + index}
+        key={movie.title + index}
         title={movie.title}
           year={movie.year}
           overview={movie.overview}

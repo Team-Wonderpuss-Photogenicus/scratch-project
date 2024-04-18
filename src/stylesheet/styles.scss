@@ -121,13 +121,18 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;;
-  padding: 3px;
+  margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .movieContainer {
-  background-color: white;
-  display: inline-flex;
+  background-color: rgb(39, 6, 6);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(116,11,8,1) 40%, rgba(181,1,11,1) 100%);
+  display: flex;
+  flex-flow: row wrap;
+  // justify-content: space-between;
+  justify-content: space-evenly;
+  padding: 0 2.5%;
 }
 
 
