@@ -473,7 +473,7 @@ const obj = [
   }
 ];
 
-console.log("object movie title: ", obj.title);
+// console.log("object movie title: ", obj.title);
 
 const MovieContainer = ({ movies }) => {
 
@@ -503,8 +503,8 @@ useEffect(() => {
 
   const moviesMap = obj?.map((movie, index) => {
     //question make makes it conditional
-    console.log("key", movie.title + index);
-    console.log("in loop, title: ", movie.title);
+    // console.log("key", movie.title + index);
+    // console.log("in loop, title: ", movie.title);
     return (
       <MovieComponent
         key={movie.title + index}
