@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from '../stylesheet/styles.scss';
 
-const Question = ({recommend}) => {
-  const [userInput, setUserInput] = useState("");
-  const [answer, setAnswer] = useState("");
-  const [matchOrComfort, setMatchOrComfort] = useState("");
+const Question = ({ recommend }) => {
+  const [userInput, setUserInput] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [matchOrComfort, setMatchOrComfort] = useState('matching');
 
   const handleSubmit = async (event) => {
     console.log('in the first question handleSubmit');
@@ -56,11 +56,11 @@ const Question = ({recommend}) => {
         body: JSON.stringify({
           emotion: answer,
           matchOrEscape: matchOrComfort,
-          page: 1,
+          page: 2,
         }),
       });
       const data = await response.json();
-      console.log(data);
+      console.log('the data infrontend from backend', data);
       recommend(data);
     } catch (error) {
       console.error(`Error in the recommend movie ${error}`);
@@ -87,9 +87,7 @@ const Question = ({recommend}) => {
         It seems you are {answer}. Do you want to match it or comfort it?
       </p>
       <select value={matchOrComfort} onChange={handleSelect}>
-        <option value='matching' selected>
-          Match
-        </option>
+        <option value='matching'>Match</option>
         <option value='escaping'>Escaping</option>
       </select>
       <button onClick={handleRecommend} type='submit' className='submit'>
