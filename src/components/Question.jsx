@@ -4,7 +4,7 @@ import styles from '../stylesheet/styles.scss';
 const Question = ({recommend}) => {
   const [userInput, setUserInput] = useState("");
   const [answer, setAnswer] = useState("");
-  const [matchOrComfort, setMatchOrComfort] = useState("");
+  const [matchOrComfort, setMatchOrComfort] = useState("matching");
 
   const handleSubmit = async (event) => {
     console.log('in the first question handleSubmit');
@@ -87,7 +87,7 @@ const Question = ({recommend}) => {
         It seems you are {answer}. Do you want to match it or comfort it?
       </p>
       <select value={matchOrComfort} onChange={handleSelect}>
-        <option value='matching' selected>
+        <option value='matching'>
           Match
         </option>
         <option value='escaping'>Escaping</option>
