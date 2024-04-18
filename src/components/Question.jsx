@@ -88,11 +88,11 @@ const Question = ({ recommend }) => {
       {submitClick && (
         <>
           <p className="question">
-            It seems you are {answer}. Do you want to match it or comfort it?
+            Seems like you're feeling {answer}. Do you want to keep feeling that way or do you want to escape that feeling?
           </p>
           <select value={matchOrComfort} onChange={handleSelect}>
-            <option value="matching">Matching</option>
-            <option value="escaping">Escaping</option>
+            <option value="matching">Match It</option>
+            <option value="escaping">Escape It</option>
           </select>
           <button onClick={handleRecommend} type="submit" className="submit">
             Recommend
