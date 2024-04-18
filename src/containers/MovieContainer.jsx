@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MovieComponent from "../components/MovieComponents.jsx";
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const obj = [
   {
@@ -470,14 +469,17 @@ const obj = [
       },
     ],
     directors: ["Brendan Gabriel Murphy"],
-  }
+  },
 ];
 
 // console.log("object movie title: ", obj.title);
 
 const MovieContainer = ({ movies }) => {
+  if (!movies) {
+    return null;
+  }
 
-/*
+  /*
 
 const [getdata, setGetData] = useState([]);
 
@@ -500,7 +502,6 @@ useEffect(() => {
   }
 */
 
-
   const moviesMap = obj?.map((movie, index) => {
     //question make makes it conditional
     // console.log("key", movie.title + index);
@@ -509,12 +510,12 @@ useEffect(() => {
       <MovieComponent
         key={movie.title + index}
         title={movie.title}
-          year={movie.year}
-          overview={movie.overview}
-          genres={movie.genres[0].name}
-          directors={movie.directors[0]}
-          cast={movie.cast}
-          streamingInfo={movie.streamingInfo}
+        year={movie.year}
+        overview={movie.overview}
+        genres={movie.genres[0].name}
+        directors={movie.directors[0]}
+        cast={movie.cast}
+        streamingInfo={movie.streamingInfo}
       />
     );
   });
@@ -523,7 +524,6 @@ useEffect(() => {
 };
 
 export default MovieContainer;
-
 
 // function genreList (movie) {
 //     const genreMap = movies.genres.map((item, index) => {
