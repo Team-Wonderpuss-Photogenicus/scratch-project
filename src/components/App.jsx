@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="appContainer">
       <Navbar />
-      <MovieRec recommend={handleMovieData} />
-      <Question />
+      <MovieRec />
+      <Question recommend={handleMovieData} />
       <MovieContainer movies={movies} />
     </div>
   );
