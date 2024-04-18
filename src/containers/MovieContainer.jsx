@@ -8,11 +8,13 @@ const MovieContainer = ({ movies }) => {
     return null;
   }
 
+  console.log('movies: ', movies)
 
   const moviesMap = movies?.map((movie, index) => {
     return (
       <MovieComponent
         key={movie.title + index}
+        poster={movie.poster_path}
         title={movie.title}
         year={movie.year}
         overview={movie.overview}
