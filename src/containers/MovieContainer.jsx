@@ -10,19 +10,38 @@ const MovieContainer = ({ movies }) => {
 
   console.log('movies: ', movies.results);
 
+// const genreMap = movies.results.genres.map((genre, index) => {
+//     <li key={index}>{genre.name}</li>
+
+//     const genreList = <ul>{genreList}</ul>
+
+//     return (
+//       {genreList}
+//     )
+// });
+
+
+// const castMap = movies.results.credits.cast((cast, index) => (
+//   <li key={index}>{cast.name}</li>
+// ));
+
+// const castList = <ul>{castMap}</ul>;
+
+
   const moviesMap = movies.results?.map((movie, index) => {
     return (
       <MovieComponent
-        key={movie.original_title + index}
-        poster={movie.poster_path}
+        key={movie.id + index}
+        poster_path={movie.poster_path}
         title={movie.original_title}
         year={movie.release_date}
         overview={movie.overview}
-        rating={movie.vote_average}
-        // genres={movie.genres[0].name}
+        rating={Math.floor(movie.vote_average)+ '/10'}
+        // genres={genreList}
         // directors={movie.directors[0]}
-        // cast={movie.cast}
-        // streamingInfo={movie.streamingInfo}
+        // cast={castList}
+        //rentMovies={movie.watchProviders}
+        //buyMovies
       />
     );
   });
@@ -32,14 +51,3 @@ const MovieContainer = ({ movies }) => {
 
 export default MovieContainer;
 
-// function genreList (movie) {
-//     const genreMap = movies.genres.map((item, index) => {
-//         <Genre key={index} text={item} />;
-//     });
-
-//     return { Genre };
-// };
-
-// function Genre (props) {
-//     return <div>{props.text}</div>;
-// };

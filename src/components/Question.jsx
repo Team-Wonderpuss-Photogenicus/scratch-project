@@ -69,7 +69,7 @@ const Question = ({ recommend }) => {
 
   return (
     <div className='questionContainer'>
-      <p className='question'>How's your day?</p>
+      <p className='question'>How are you feeling today?</p>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -84,11 +84,11 @@ const Question = ({ recommend }) => {
         </button>
       </form>
       <p className='question'>
-        It seems you are {answer}. Do you want to match it or comfort it?
+        Seems like you're feeling {answer}. Do you want to keep feeling that way or do you want to escape that feeling?
       </p>
       <select value={matchOrComfort} onChange={handleSelect}>
         <option value='matching'>Match</option>
-        <option value='escaping'>Escaping</option>
+        <option value='escaping'>Escape</option>
       </select>
       <button onClick={handleRecommend} type='submit' className='submit'>
         Recommend

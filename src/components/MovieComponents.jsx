@@ -15,7 +15,7 @@ function MovieComponent(props) {
     streamingInfo,
     directors,
     cast,
-    poster,
+    poster_path,
     rating,
   } = props;
 
@@ -26,21 +26,20 @@ function MovieComponent(props) {
     <Card className='card' style={{ width: '20rem' }}>
       <Card.Img
         variant='top'
-        src={`https://image.tmdb.org/t/p/original${poster}`}
+        src={`https://image.tmdb.org/t/p/original${poster_path}`}
       />
       <Card.Body>
         <Card.Title>
-          {title} ({year})
+          {title}
         </Card.Title>
         <Card.Text>{overview}</Card.Text>
       </Card.Body>
       <ListGroup className='list-group-flush'>
-        <ListGroup.Item> Genres: {genres}</ListGroup.Item>
-        <ListGroup.Item>Directors: {directors}</ListGroup.Item>
+        <ListGroup.Item> Ratings: {rating}</ListGroup.Item>
+        <ListGroup.Item>Release Date: {year}</ListGroup.Item>
         <ListGroup.Item>Cast: {cast}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        {/* can check if property is availble, show only availble */}
       </Card.Body>
       <Card.Footer>
         {/* <Card.Link href={streamingInfo[0].link}>streaming service link</Card.Link> */}

@@ -187,4 +187,21 @@ getWatchProviders:
     }
   }
 } (edited) 
+
+"credits": {
+    "cast": [
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 70851,
+        "known_for_department": "Acting",
+        "name": "Jack Black",
+        "original_name": "Jack Black",
+        "popularity": 62.041,
+        "profile_path": "/rtCx0fiYxJVhzXXdwZE2XRTfIKE.jpg",
+        "cast_id": 1,
+        "character": "Po (voice)",
+        "credit_id": "62fae24c303c85008229904c",
+        "order": 0
+      },
 */
