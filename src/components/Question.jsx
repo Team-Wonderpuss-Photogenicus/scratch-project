@@ -56,7 +56,7 @@ const Question = ({ recommend }) => {
         body: JSON.stringify({
           emotion: answer,
           matchOrEscape: matchOrComfort,
-          page: 2,
+          page: 1,
         }),
       });
       const data = await response.json();
