@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import styles from '../stylesheet/styles.scss';
 
-const Question = () => {
-  const [userInput, setUserInput] = useState('');
-  const [answer, setAnswer] = useState('');
-  const [matchOrComfort, setMatchOrComfort] = useState('matching');
+const Question = ({recommend}) => {
+  const [userInput, setUserInput] = useState("");
+  const [answer, setAnswer] = useState("");
+  const [matchOrComfort, setMatchOrComfort] = useState("");
 
   const handleSubmit = async (event) => {
     console.log('in the first question handleSubmit');
@@ -60,7 +60,8 @@ const Question = () => {
         }),
       });
       const data = await response.json();
-      console.log(response.data);
+      console.log(data);
+      recommend(data);
     } catch (error) {
       console.error(`Error in the recommend movie ${error}`);
     }
