@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../stylesheet/styles.scss";
 
-const Question = () => {
+const Question = ({recommend}) => {
   const [userInput, setUserInput] = useState("");
   const [answer, setAnswer] = useState("");
   const [matchOrComfort, setMatchOrComfort] = useState("");
@@ -29,6 +29,7 @@ const Question = () => {
       const answer = await response.json();
       console.log("response", response);
       console.log("answer", answer);
+      
       setAnswer(answer);
     } catch (error) {
       console.error(`Error in fetch first submit ${error}`);
@@ -59,7 +60,8 @@ const Question = () => {
         }),
       });
       const data = await response.json();
-      console.log(response.data);
+      console.log(data);
+      recommend(data);
     } catch (error) {
       console.error(`Error in the recommend movie ${error}`);
     }
