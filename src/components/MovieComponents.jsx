@@ -1,10 +1,10 @@
-import React from "react";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
-import ListGroup from "react-bootstrap/ListGroup";
-import right from "../assets/right.jpeg";
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
+import ListGroup from 'react-bootstrap/ListGroup';
+import right from '../assets/right.jpeg';
 
 function MovieComponent(props) {
   const {
@@ -15,21 +15,26 @@ function MovieComponent(props) {
     streamingInfo,
     directors,
     cast,
-    poster_path,
+    poster,
+    rating,
   } = props;
 
-  console.log("props: ", props);
+  console.log('props: ', props);
+  console.log();
 
-  return ( 
-    <Card className="card" style={{ width: "20rem" }}>
-      <Card.Img variant="top" src={right} />
+  return (
+    <Card className='card' style={{ width: '20rem' }}>
+      <Card.Img
+        variant='top'
+        src={`https://image.tmdb.org/t/p/original${poster}`}
+      />
       <Card.Body>
         <Card.Title>
           {title} ({year})
         </Card.Title>
         <Card.Text>{overview}</Card.Text>
       </Card.Body>
-      <ListGroup className="list-group-flush">
+      <ListGroup className='list-group-flush'>
         <ListGroup.Item> Genres: {genres}</ListGroup.Item>
         <ListGroup.Item>Directors: {directors}</ListGroup.Item>
         <ListGroup.Item>Cast: {cast}</ListGroup.Item>
@@ -39,7 +44,7 @@ function MovieComponent(props) {
       </Card.Body>
       <Card.Footer>
         {/* <Card.Link href={streamingInfo[0].link}>streaming service link</Card.Link> */}
-        <Card.Link href="#">other streaming service link</Card.Link>
+        <Card.Link href='#'>other streaming service link</Card.Link>
       </Card.Footer>
     </Card>
   );
