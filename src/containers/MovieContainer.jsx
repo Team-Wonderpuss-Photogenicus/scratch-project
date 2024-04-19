@@ -8,7 +8,7 @@ const MovieContainer = ({ movies }) => {
     return null;
   }
 
-  console.log('movies: ', movies.results);
+  console.log('movie id: ', movies.results.id);
 
 // const genreMap = movies.results.genres.map((genre, index) => {
 //     <li key={index}>{genre.name}</li>
@@ -37,8 +37,9 @@ const MovieContainer = ({ movies }) => {
         year={movie.release_date}
         overview={movie.overview}
         rating={Math.floor(movie.vote_average)+ '/10'}
+        id={movie.id}
         // genres={genreList}
-        // directors={movie.directors[0]}
+        directors={movie.directors[0]}
         // cast={castList}
         // rent={movie.watchProviders}
         //buyMovies

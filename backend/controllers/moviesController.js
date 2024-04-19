@@ -41,7 +41,7 @@ const moviesController = {
   getMovieDetails: async (req, res, next) => {
     const { movie_id } = req.params;
 
-    const deetsUrl = `https://api.themoviedb.org/3/movie/${movie_id}?append_to_response=credits&language=en-US`;
+    const deetsUrl = `https://api.themoviedb.org/3/movie/${movie_id}?append_to_response=credits,watch/providers&language=en-US`;
 
     try {
       const response = await fetch(deetsUrl, options);
