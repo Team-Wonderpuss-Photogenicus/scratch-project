@@ -13,9 +13,6 @@ const MovieRec = () => {
           <button className="recButton">Register</button>
         </div>
       </div>
-      <div className="right">
-        <img src={right} alt="Right Side Image" className="image" />
-      </div>
     </div>
   );
 };
