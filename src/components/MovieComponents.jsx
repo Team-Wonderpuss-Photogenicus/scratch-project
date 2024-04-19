@@ -54,11 +54,11 @@ function MovieComponent(props) {
           <div className='float-end'> {year}</div>
         </ListGroup.Item>
         <ListGroup.Item className='bg-dark text-white'>
-          Rent: {rent}
+          {genres}
         </ListGroup.Item>
-        <ListGroup.Item className='bg-dark text-white'>
+        {/* <ListGroup.Item className='bg-dark text-white'>
           Buy: {buy}
-        </ListGroup.Item>
+        </ListGroup.Item> */}
       </ListGroup>
       <Card.Footer>
         <Button ref={target} onClick={() => setShow(!show)}>Details</Button>

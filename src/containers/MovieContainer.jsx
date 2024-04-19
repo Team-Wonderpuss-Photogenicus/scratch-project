@@ -10,16 +10,6 @@ const MovieContainer = ({ movies }) => {
 
   console.log('movie id: ', movies.results.id);
 
-// const genreMap = movies.results.genres.map((genre, index) => {
-//     <li key={index}>{genre.name}</li>
-
-//     const genreList = <ul>{genreList}</ul>
-
-//     return (
-//       {genreList}
-//     )
-// });
-
 
 // const castMap = movies.results.credits.cast((cast, index) => (
 //   <li key={index}>{cast.name}</li>
@@ -38,7 +28,7 @@ const MovieContainer = ({ movies }) => {
         overview={movie.overview}
         rating={Math.floor(movie.vote_average)+ '/10'}
         id={movie.id}
-        // genres={genreList}
+        genres={movie.genres}
         // directors={}
         // cast={castList}
         // rent={movie.watchProviders}
