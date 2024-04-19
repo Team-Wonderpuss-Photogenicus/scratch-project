@@ -39,8 +39,8 @@ function MovieComponent(props) {
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text className='sub'>
-          {overview.length > 100
-            ? overview.substring(0, 100) + '...'
+          {overview.length > 125
+            ? overview.substring(0, 125) + '...'
             : overview}
         </Card.Text>
       </Card.Body>
