@@ -25,7 +25,7 @@ const moviesController = {
     const sort_by = 'popularity.desc';
     const watch_region = 'us';
 
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=${sort_by}&watch_region=${watch_region}&with_genres=${with_genres}`;
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&primary_release_date.gte=1990-01-01&primary_release_date.lte=2024-04-01&sort_by=${sort_by}&watch_region=${watch_region}&with_genres=${with_genres}&vote_average.gte=6`;
 
     try {
       const response = await fetch(url, options);
