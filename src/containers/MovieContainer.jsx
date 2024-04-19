@@ -39,7 +39,7 @@ const MovieContainer = ({ movies }) => {
         rating={Math.floor(movie.vote_average)+ '/10'}
         id={movie.id}
         // genres={genreList}
-        directors={movie.directors[0]}
+        directors={}
         // cast={castList}
         // rent={movie.watchProviders}
         //buyMovies
