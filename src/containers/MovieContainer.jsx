@@ -40,7 +40,7 @@ const MovieContainer = ({ movies }) => {
         // genres={genreList}
         // directors={movie.directors[0]}
         // cast={castList}
-        //rentMovies={movie.watchProviders}
+        // rent={movie.watchProviders}
         //buyMovies
       />
     );
