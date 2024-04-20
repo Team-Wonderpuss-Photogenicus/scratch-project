@@ -8,17 +8,7 @@ const MovieContainer = ({ movies }) => {
     return null;
   }
 
-  console.log('movies: ', movies.results);
-
-// const genreMap = movies.results.genres.map((genre, index) => {
-//     <li key={index}>{genre.name}</li>
-
-//     const genreList = <ul>{genreList}</ul>
-
-//     return (
-//       {genreList}
-//     )
-// });
+  console.log('movie id: ', movies.results.id);
 
 
 // const castMap = movies.results.credits.cast((cast, index) => (
@@ -37,11 +27,11 @@ const MovieContainer = ({ movies }) => {
         year={movie.release_date}
         overview={movie.overview}
         rating={Math.floor(movie.vote_average)+ '/10'}
-        // genres={genreList}
-        // directors={movie.directors[0]}
-        // cast={castList}
-        // rent={movie.watchProviders}
-        //buyMovies
+        id={movie.id}
+        genres={movie.genres}
+        // cast={castList} --> not sure about this one
+        // rent={movie.watchProviders.us.rent}
+        // buy={movie.watchProviders.us.buy}
       />
     );
   });
