@@ -29,10 +29,9 @@ const MovieContainer = ({ movies }) => {
         rating={Math.floor(movie.vote_average)+ '/10'}
         id={movie.id}
         genres={movie.genres}
-        // directors={}
-        // cast={castList}
-        // rent={movie.watchProviders}
-        //buyMovies
+        // cast={castList} --> not sure about this one
+        // rent={movie.watchProviders.us.rent}
+        // buy={movie.watchProviders.us.buy}
       />
     );
   });
