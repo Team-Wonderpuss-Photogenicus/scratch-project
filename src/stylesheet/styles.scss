@@ -1,0 +1,129 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #181818;
+}
+
+.appContainer {
+  background-color: #181818;
+}
+
+.logoContainer {
+  margin-left: 20px;
+  flex: 0 0 auto;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+.title {
+  flex: 1;
+  text-align: left;
+  font-size: 30px;
+}
+
+.profileContainer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.profileImg {
+  width: 40px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.recContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 30vh;
+  color: #ffffff;
+}
+
+.center {
+  text-align: center;
+}
+
+.recTitle {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.recButtons {
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.recButton {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.questionContainer {
+  color: #ffffff;
+  text-align: center;
+}
+
+.submit {
+  margin-left: 10px;
+}
+
+.text {
+  width: 500px;
+}
+
+.question {
+  font-size: 20px;
+}
+
+.card {
+  background-color: rgb(0 0 0/ 65%);
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.movieContainer {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(116, 11, 8, 1) 40%,
+    rgba(181, 1, 11, 1) 100%
+  );
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 0 2.5%;
+}
+
+.sub {
+  font-size: 12px;
+  text-overflow: ellipsis;
+  height: 60px;
+  max-height: 60px;
+  font-weight: lighter;
+}
+
+.float-end {
+  font-size: 12px;
+}
+
+.list-group-flush {
+  font-size: 12px;
+}
