@@ -2,6 +2,7 @@ const emotionsController = require('../controllers/emotionsController.js');
 const express = require('express');
 const router = express.Router();
 
+//test api
 router.get('/', (req, res) => {
   res.json({ message: 'Hello from emotions api' });
 });

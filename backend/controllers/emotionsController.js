@@ -25,7 +25,6 @@ emotionsController.getEmotion = (req, res, next) => {
   naturalLanguageUnderstanding
     .analyze(analyzeParams)
     .then((analysisResults) => {
-      console.log(analysisResults.result.emotion.document.emotion);
       const emotionObj = analysisResults.result.emotion.document.emotion;
 
       const emotionsArr = Object.keys(emotionObj);
@@ -41,10 +40,6 @@ emotionsController.getEmotion = (req, res, next) => {
           emotion = emotionsArr[i];
         }
       }
-
-      console.log('array ->', emotionsArr);
-      console.log('this is max->', max);
-      console.log('this is min->', min);
 
       res.locals.emotion = emotion;
       return next();

@@ -18,7 +18,6 @@ fileController.getMappingEmotions = (req, res, next) => {
           })
         );
       const parsedData = JSON.parse(chars);
-      //   console.log(parsedData);
       res.locals.emotionList = parsedData.emotionList;
       return next();
     }

@@ -3,6 +3,15 @@ const moviesController = require('../controllers/moviesController');
 const fileController = require('../controllers/fileController.js');
 const router = express.Router();
 
+router.post(
+  '/',
+  fileController.getMappingEmotions,
+  moviesController.getMovieList,
+  (req, res) => {
+    res.status(201).send(res.locals.list);
+  }
+);
+
 router.get('/list/:with_genres', moviesController.getMovieList, (req, res) => {
   res.status(201).send(res.locals.list);
 });
@@ -12,23 +21,6 @@ router.get(
   moviesController.getMovieDetails,
   (req, res) => {
     res.status(201).send(res.locals.details);
-  }
-);
-
-router.get(
-  '/watch/:movie_id',
-  moviesController.getWatchProviders,
-  (req, res) => {
-    res.status(201).send(res.locals.providers);
-  }
-);
-
-router.post(
-  '/',
-  fileController.getMappingEmotions,
-  moviesController.getMovieList,
-  (req, res) => {
-    res.status(201).send(res.locals.list);
   }
 );
 
