@@ -3,32 +3,32 @@
     {
       "emotionId": 1,
       "emotion": "joy",
-      "matching": [35, 10402, 10749, 12],
-      "escaping": [53, 28, 12, 80, 27]
+      "matching": [16, 12, 35, 10749, 14, 10751, 10402],
+      "escaping": [18, 27, 80, 36, 9648, 53, 10752]
     },
     {
       "emotionId": 2,
       "emotion": "sadness",
-      "matching": [18, 10402, 99],
-      "escaping": [28, 12, 35, 10749, 10402]
+      "matching": [18, 27, 80, 36, 9648, 53, 10752],
+      "escaping": [12, 28, 16, 35, 10751, 14, 10402, 10749]
     },
     {
       "emotionId": 3,
       "emotion": "anger",
-      "matching": [18, 28, 99, 10752],
-      "escaping": [53, 28, 12, 80, 27]
+      "matching": [28, 80, 99, 18, 53, 10752, 878],
+      "escaping": [12, 16, 35, 10751, 14, 10402]
     },
     {
       "emotionId": 4,
       "emotion": "disgust",
-      "matching": [80, 27, 53, 99],
-      "escaping": [99, 878, 14, 28, 12]
+      "matching": [80, 99, 18, 27, 10752],
+      "escaping": [16, 12, 35, 10749, 14, 10751, 10402]
     },
     {
       "emotionId": 5,
       "emotion": "fear",
-      "matching": [35, 10402, 10749, 12],
-      "escaping": [53, 28, 12, 80, 27]
+      "matching": [27, 9648],
+      "escaping": [16, 35, 10751, 14, 10402]
     }
   ]
 }

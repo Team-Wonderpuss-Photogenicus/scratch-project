@@ -1,10 +1,6 @@
 const express = require('express');
-const connectDB = require('./config/database');
 const app = express();
 const port = 3000;
-
-// Connect to MongoDB
-connectDB();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -13,12 +9,10 @@ const api = require('./routes/api');
 const emotions = require('./routes/emotions');
 const movies = require('./routes/movies');
 const file = require('./routes/file');
-// const posters = require('./routes/posters');
 
 app.use('/api/emotions', emotions);
 app.use('/api/movies', movies);
 app.use('/api/file', file);
-// app.use('/api/posters', posters);
 app.use('/api', api);
 
 app.use((req, res) => res.sendStatus(404));
